@@ -8,7 +8,7 @@ This library does not require the PHP OAuth extension. It should work on any ser
 
 ## Installation ##
 This package is installable with composer:
-    "popthestack/fitbit": "dev-master"
+    "huitiemesens/fitbit": "dev-master"
 
 ## Usage ##
 
@@ -88,3 +88,9 @@ echo '</pre>';
 
  * By default, all requests assume you want data for the authorized user (viewer). There are, however, several endpoints you can use to access the data of other Fitbit users, given that you have permission to access their data. This is accomplished by setting the Fitbit User ID with the `setUserID` method available on `ApiGatewayFactory` and the Endpoint Gateways (e.g. `UserGateway`, `FoodGateway`).
  * *Subscriptions*: this library has some basic methods to add/delete subscriptions, but it's your responsibility to track the list and maintain server endpoints to receive notifications from Fitbit, as well as register them at [http://dev.fitbit.com](http://dev.fitbit.com). See [Subscriptions API](https://wiki.fitbit.com/display/API/Fitbit+Subscriptions+API) for more information.
+ 
+ 
+ ## New API ##
+ 
+ * getWeight in BodyGateway : Allow to get all weight log over a period, a range date or on a specific date. check on https://wiki.fitbit.com/display/API/API-Get-Body-Weight for more information
+ 

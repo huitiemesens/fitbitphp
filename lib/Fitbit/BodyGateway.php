@@ -14,7 +14,7 @@ class BodyGateway extends EndpointGateway {
      * @param  String $endDateStr
      * @return mixed SimpleXMLElement or the value encoded in json as an object
      */
-    public function getBodyWeigth( $date, $dateStr = null, $endDate = null, $endDateStr = null)
+    public function getBodyWeight( $date, $dateStr = null, $endDate = null, $endDateStr = null)
     {
         if ( !isset( $dateStr ) ){
             $dateStr    =   $date->format('Y-m-d');

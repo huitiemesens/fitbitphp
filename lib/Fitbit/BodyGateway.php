@@ -5,6 +5,39 @@ namespace Fitbit;
 class BodyGateway extends EndpointGateway {
 
     /**
+     * Get user body weight over a period , range or on a specific date
+     *
+     * @access public
+     * @param  \DateTime $date
+     * @param  String $dateStr
+     * @param  \DateTime $endDate
+     * @param  String $endDateStr
+     * @return mixed SimpleXMLElement or the value encoded in json as an object
+     */
+    public function getBodyWeigth( $date, $dateStr = null, $endDate = null, $endDateStr = null)
+    {
+        if ( !isset( $dateStr ) ){
+            $dateStr    =   $date->format('Y-m-d');
+        }
+        
+        // if a second parameter is set, like a date or a period
+        if ( $endDate !== null ){
+            
+            // we check if our second parameter is a datetime
+            if ( strtotime( $endDate ) ){
+                $endDateStr =   $endDate->format('Y-m-d');
+                return $this->makeApiRequest( "user/" . $this->userID . "/body/log/weight/date/" . $dateStr . "/" . $endDateStr );
+            }
+            // otherwise it's a period, so we include as it in our request
+            else
+                return $this->makeApiRequest( "user/" . $this->userID . "/body/log/weight/date/" . $dateStr . "/" . $endDateStr );
+        }
+        else
+            return $this->makeApiRequest( "user/" . $this->userID . "/body/log/weight/date/" . $dateStr );
+    }
+    
+    
+    /**
      * Get user body measurements
      *
      * @access public

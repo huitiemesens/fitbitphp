@@ -1,8 +1,8 @@
 {
     "name": "huitiemesens/fitbit",
-    "version": "0.6",
+    "version": "0.7.0",
     "type": "library",
-    "description": "Forke of popthestack/fitbit with new Api",
+    "description": "Fork of popthestack/fitbit with new APIs",
     "keywords": ["fitbit"],
     "homepage": "https://github.com/huitiemesens/fitbitphp",
     "license" : "Apache-2.0",

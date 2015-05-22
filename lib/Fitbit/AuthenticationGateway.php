@@ -27,7 +27,7 @@ class AuthenticationGateway extends EndpointGateway {
      * Get login URL
      *
      * @access public
-     * @return withings login url
+     * @return fitbit login url
      */
     public function getLoginUrl()
     {

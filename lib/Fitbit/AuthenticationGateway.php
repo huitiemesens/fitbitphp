@@ -22,6 +22,19 @@ class AuthenticationGateway extends EndpointGateway {
         header('Location: ' . $url);
         exit;
     }
+
+    /**
+     * Get login URL
+     *
+     * @access public
+     * @return withings login url
+     */
+    public function getLoginUrl()
+    {
+        $token = $this->service->requestRequestToken();
+        return $this->service->getAuthorizationUri(['oauth_token' => $token->getRequestToken()]);
+    }
+
     
     /**
      * Authenticate user, request access token.
